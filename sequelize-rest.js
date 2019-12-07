@@ -21,4 +21,4 @@ db.sync()
   .then(() => console.log('Three movies added'))
   .catch(console.error)
 
-module.exports = db
+module.exports = { db, Movie }

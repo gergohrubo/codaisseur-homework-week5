@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const Movie = require('./model')
+const { Movie } = require('../sequelize-rest')
 
 const router = new Router()
 
