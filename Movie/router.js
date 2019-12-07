@@ -7,13 +7,14 @@ router.get('/movie', (req, res, next) => {
   const limit = req.query.limit || 25
   const offset = req.query.offset || 0
   Movie.findAndCountAll({ limit, offset })
-    .then(movies => res.send({ movies: movies.rows, total: movies.count }))
-    .catch(error => next(error))
+    .then(movies => res.send({ data: movies.rows, total: movies.count }))
+    .catch(next)
 })
 
 router.post('/movie', (req, res, next) => {
   Movie.create(req.body)
     .then(event => res.send(event))
+    .catch(next)
 })
 
 router.get('/movie/:id', (req, res, next) => {
