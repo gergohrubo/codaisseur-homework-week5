@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-// const limitingMiddleware = require('./limitingMiddleware')
 const app = express()
 const port = 3000
 let count = 0
